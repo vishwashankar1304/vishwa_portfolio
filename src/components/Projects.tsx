@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import aiCancerProject from "@/assets/ai-cancer-project.jpg";
+import passwordManager from "@/assets/password-manager.jpg";
+import ecommerceApp from "@/assets/ecommerce-app.jpg";
+import portfolioProject from "@/assets/portfolio-project.jpg";
 
 const Projects = () => {
   const projects = [
@@ -9,6 +13,7 @@ const Projects = () => {
       tech: ["Python", "PyTorch", "React", "Vision Transformer", "ClinicalBERT"],
       github: "https://github.com/vishwashankar1304",
       demo: "https://github.com/vishwashankar1304",
+      image: aiCancerProject,
       featured: true
     },
     {
@@ -16,21 +21,24 @@ const Projects = () => {
       description: "Secure, encrypted password vault with login and storage functionality, built using modern web technologies with a focus on security and user experience.",
       tech: ["React", "Node.js", "Encryption", "JWT"],
       github: "https://github.com/vishwashankar1304",
-      demo: "https://github.com/vishwashankar1304"
+      demo: "https://github.com/vishwashankar1304",
+      image: passwordManager
     },
     {
       title: "E-commerce Shopping App (Snitch-like)",
       description: "A prototype shopping application featuring modern UI/UX design, product browsing, cart functionality, and responsive design principles.",
       tech: ["React", "Firebase", "CSS3", "JavaScript"],
       github: "https://github.com/vishwashankar1304",
-      demo: "https://github.com/vishwashankar1304"
+      demo: "https://github.com/vishwashankar1304",
+      image: ecommerceApp
     },
     {
       title: "Portfolio Website",
       description: "This portfolio website showcasing my projects and skills, built with modern web technologies and featuring responsive design and smooth animations.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
       github: "https://github.com/vishwashankar1304",
-      demo: "https://vishwa-portfolio.lovable.app"
+      demo: "https://vishwa-portfolio.lovable.app",
+      image: portfolioProject
     }
   ];
 
@@ -49,45 +57,35 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative bg-gradient-card rounded-xl p-6 shadow-card border border-border hover:shadow-elegant transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up ${
-                project.featured ? "md:col-span-2 lg:col-span-1" : ""
+              className={`group relative bg-gradient-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-neon transition-all duration-500 transform hover:-translate-y-4 hover:scale-[1.02] animate-fade-in-up ${
+                project.featured ? "md:col-span-2" : ""
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {project.featured && (
-                <div className="absolute top-4 right-4">
-                  <span className="bg-gradient-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-                    Featured
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-glow">
+                    ⭐ Featured
                   </span>
                 </div>
               )}
 
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
+              {/* Project Image */}
+              <div className="relative h-48 md:h-56 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                 
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-secondary/50 text-secondary-foreground px-3 py-1 rounded-lg text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-4 pt-4">
+                {/* Overlay with links */}
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-background/20 backdrop-blur-sm">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => window.open(project.github, '_blank')}
-                    className="group/btn"
+                    className="bg-background/80 hover:bg-background border-primary/50 hover:border-primary group/btn backdrop-blur-sm"
                   >
                     <Github className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                     Code
@@ -96,11 +94,33 @@ const Projects = () => {
                     variant="default"
                     size="sm"
                     onClick={() => window.open(project.demo, '_blank')}
-                    className="group/btn"
+                    className="group/btn shadow-glow"
                   >
                     <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     Demo
                   </Button>
+                </div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  {project.title}
+                </h3>
+                
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-secondary/80 text-secondary-foreground px-3 py-1 rounded-full text-xs font-medium border border-border/50 hover:border-primary/50 transition-colors duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

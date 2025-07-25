@@ -1,6 +1,9 @@
 const About = () => {
   return (
-    <section className="py-20 bg-background" id="about">
+    <section className="py-20 bg-gradient-subtle relative overflow-hidden" id="about">
+      {/* Background decorations */}
+      <div className="absolute top-10 right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary-glow/5 rounded-full blur-3xl"></div>
       <div className="container max-w-4xl mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-4xl font-bold text-foreground mb-4">About Me</h2>

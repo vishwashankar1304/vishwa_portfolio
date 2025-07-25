@@ -4,16 +4,25 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-subtle px-4 py-20">
-      <div className="container max-w-6xl mx-auto">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-hero px-4 py-20 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float animation-delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-primary opacity-5 rounded-full blur-3xl"></div>
+      </div>
+      <div className="container max-w-6xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8 animate-fade-in-up">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Hi, I'm{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Vishwa S
+            <div className="space-y-6">
+              <div className="inline-block">
+                <span className="text-primary-glow text-lg font-medium">Hello, I'm</span>
+              </div>
+              <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+                <span className="block">Vishwa S</span>
+                <span className="bg-gradient-primary bg-clip-text text-transparent block text-4xl lg:text-5xl mt-2">
+                  AI Enthusiast & Developer
                 </span>
               </h1>
               <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
@@ -75,15 +84,18 @@ const Hero = () => {
 
           {/* Image */}
           <div className="relative animate-fade-in-up animation-delay-300">
-            <div className="relative z-10">
-              <img
-                src={heroImage}
-                alt="Vishwa S - Developer"
-                className="rounded-2xl shadow-elegant w-full h-auto max-w-lg mx-auto animate-float"
-              />
+            <div className="relative z-10 group">
+              <div className="absolute inset-0 bg-gradient-primary rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-neon group-hover:shadow-glow transition-all duration-500 group-hover:scale-105">
+                  <img
+                    src={heroImage}
+                    alt="Vishwa S - Developer"
+                    className="w-full h-full object-cover animate-float"
+                  />
+                </div>
+              </div>
             </div>
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl blur-3xl transform scale-105"></div>
           </div>
         </div>
       </div>
