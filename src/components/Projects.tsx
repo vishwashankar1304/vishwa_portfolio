@@ -8,47 +8,47 @@ import portfolioProject from "@/assets/portfolio-project.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "AI-Powered Cervical Cancer Treatment Planner",
-      description: "Hybrid model using Vision Transformer, MedFormer, and ClinicalBERT for diagnosis and treatment planning with explainable AI. Built with Python, PyTorch, and React.",
-      tech: ["Python", "PyTorch", "React", "Vision Transformer", "ClinicalBERT"],
-      github: "https://github.com/vishwashankar1304",
-      demo: "https://github.com/vishwashankar1304",
+      title: "Final Year Project – Cervical Cancer Treatment Planner (Ongoing)",
+      description: "I am building an AI tool to help doctors plan treatment for cervical cancer. The system analyzes MRI scans and patient details to predict the stage of cancer, and highlights the tumor area on the scan to make diagnosis and decision-making faster and more accurate.",
+      tech: ["Python", "AI", "React", "Vision Transformer", "MedFormer", "ClinicalBERT"],
+      github: "https://github.com/vishwashankar1304/cervical-cancer-treatment-planning",
+      demo: "https://github.com/vishwashankar1304/cervical-cancer-treatment-planning",
       image: aiCancerProject,
       featured: true
     },
     {
-      title: "Password Manager App",
-      description: "Secure, encrypted password vault with login and storage functionality, built using modern web technologies with a focus on security and user experience.",
+      title: "Password Manager",
+      description: "I created a secure website where users can safely store and manage their passwords. The passwords are protected using strong encryption, and users can easily add, view, or delete their credentials. The website works smoothly on both computers and mobile devices.",
       tech: ["React", "Node.js", "Encryption", "JWT"],
-      github: "https://github.com/vishwashankar1304",
-      demo: "https://github.com/vishwashankar1304",
+      github: "https://github.com/vishwashankar1304/passwordmanager",
+      demo: "https://github.com/vishwashankar1304/passwordmanager",
       image: passwordManager
     },
     {
-      title: "E-commerce Shopping App (Snitch-like)",
-      description: "A prototype shopping application featuring modern UI/UX design, product browsing, cart functionality, and responsive design principles.",
-      tech: ["React", "Firebase", "CSS3", "JavaScript"],
-      github: "https://github.com/vishwashankar1304",
-      demo: "https://github.com/vishwashankar1304",
+      title: "Siva Traders Platform (Consultancy Project)",
+      description: "I developed a complete online store for electronics where customers can browse and purchase products, while admins can manage inventory, orders, and users through a secure login system. The platform is fast, responsive, and designed for real-time updates even with many users.",
+      tech: ["React", "Node.js", "MongoDB", "Express.js"],
+      github: "https://github.com/vishwashankar1304/Shiva-traders",
+      demo: "https://github.com/vishwashankar1304/Shiva-traders",
       image: ecommerceApp
     },
     {
-      title: "Portfolio Website",
-      description: "This portfolio website showcasing my projects and skills, built with modern web technologies and featuring responsive design and smooth animations.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
-      github: "https://github.com/vishwashankar1304",
-      demo: "https://vishwa-portfolio.lovable.app",
+      title: "Heritage Hut (Design)",
+      description: "I designed a mobile app for buying and selling handmade crafts from local artisans. The design focuses on simple browsing, easy buying, and rating features, helping local artists reach a wider audience through a modern, user-friendly platform.",
+      tech: ["Figma", "UI/UX", "Mobile Design"],
+      github: "https://www.figma.com/proto/W970WSBfXEE2Q6f6YcU8Uh/Heritage_Hut?node-id=1-2&t=Bzgo7lrvBQ0PJHna-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      demo: "https://www.figma.com/proto/W970WSBfXEE2Q6f6YcU8Uh/Heritage_Hut?node-id=1-2&t=Bzgo7lrvBQ0PJHna-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
       image: portfolioProject
     }
   ];
 
   return (
-    <section className="py-20 bg-background" id="projects">
+    <section className="py-20 bg-transparent" id="projects">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold mb-4 transition-colors duration-300 text-[#f3f4f6]/50 hover:text-primary-glow hover:drop-shadow-[0_2px_12px_rgba(0,180,255,0.7)]">Featured Projects</h2>
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-lg text-[#f3f4f6] mt-4 max-w-2xl mx-auto">
             Here are some of the projects I've worked on, showcasing my skills in full-stack development, AI, and modern web technologies.
           </p>
         </div>
@@ -57,18 +57,12 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative bg-gradient-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-neon transition-all duration-500 transform hover:-translate-y-4 hover:scale-[1.02] animate-fade-in-up ${
+              className={`group relative bg-[#181A20] rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-neon transition-all duration-500 transform hover:-translate-y-4 hover:scale-[1.02] animate-fade-in-up ${
                 project.featured ? "md:col-span-2" : ""
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {project.featured && (
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-glow">
-                    ⭐ Featured
-                  </span>
-                </div>
-              )}
+
 
               {/* Project Image */}
               <div className="relative h-48 md:h-56 overflow-hidden">
@@ -104,11 +98,11 @@ const Projects = () => {
 
               {/* Project Content */}
               <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-[#f3f4f6] transition-colors duration-300 group-hover:text-primary-glow group-hover:drop-shadow-[0_2px_12px_rgba(0,180,255,0.7)]">
                   {project.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-[#f3f4f6] leading-relaxed text-sm">
                   {project.description}
                 </p>
 
@@ -116,7 +110,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-secondary/80 text-secondary-foreground px-3 py-1 rounded-full text-xs font-medium border border-border/50 hover:border-primary/50 transition-colors duration-300"
+                      className="bg-secondary/80 text-[#f3f4f6] px-3 py-1 rounded-full text-xs font-medium border border-border/50 hover:border-primary/50 transition-colors duration-300"
                     >
                       {tech}
                     </span>

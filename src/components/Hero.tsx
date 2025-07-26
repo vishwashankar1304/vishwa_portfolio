@@ -4,13 +4,8 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-hero px-4 py-20 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float animation-delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-primary opacity-5 rounded-full blur-3xl"></div>
-      </div>
+    <section className="min-h-screen flex items-center justify-center bg-[#181A20] px-4 py-20">
+      {/* Removed animated background elements for plain format */}
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -20,19 +15,18 @@ const Hero = () => {
                 <span className="text-primary-glow text-lg font-medium">Hello, I'm</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                <span className="block">Vishwa S</span>
-                <span className="bg-gradient-primary bg-clip-text text-transparent block text-4xl lg:text-5xl mt-2">
-                  AI Enthusiast & Developer
-                </span>
+                <span className="block" style={{ color: "white" }}>Vishwa S</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-                Final Year Computer Science & Design Student | Aspiring Software Engineer & AI Enthusiast
-              </p>
+              <h1 className="text-3xl lg:text-2xl font-bold text-foreground leading-tight">
+                 <span className="text-white">And, I'm a</span><span className="text-primary-glow"> Software Engineer</span>
+              </h1>
+                
+              {/* Remove or blend the white line/divider here for seamless background */}
             </div>
             
-            <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Passionate about full-stack development, AI-driven solutions, and software testing. 
-              Currently working on cutting-edge AI research for healthcare applications.
+            <p className="text-lg text-foreground max-w-2xl leading-relaxed" style = {{ color: "white" }}>
+              I am a software engineer passionate about building useful and reliable applications. I enjoy solving problems and working on projects that make a real impact. 
+              Currently, I’m focused on creating innovative solutions in the healthcare domain.
             </p>
 
             {/* CTA Buttons */}

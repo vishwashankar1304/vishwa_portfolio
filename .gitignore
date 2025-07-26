@@ -7,6 +7,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node
+node_modules/
+bun.lockb
+
+# Build
+/dist
+/.next
+/.vercel
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Misc
+*.tmp
+*.bak
+
+# Coverage
+coverage/
+
+# Others
+*.tgz
+
+# TypeScript
+*.tsbuildinfo
+
 node_modules
 dist
 dist-ssr

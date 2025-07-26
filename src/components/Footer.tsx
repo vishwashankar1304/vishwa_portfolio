@@ -20,16 +20,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-subtle border-t border-border py-12">
+    <footer className="bg-[#181A20] border-t border-border py-12">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center space-y-6">
           {/* Logo/Name */}
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Vishwa S
+            <h3 className="text-2xl font-extrabold bg-gradient-to-r from-white via-primary to-primary-glow bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,180,255,1)]">
+              VISHWA S
             </h3>
-            <p className="text-muted-foreground">
-              Aspiring Software Engineer & AI Enthusiast
+            <p className="text-[#bfc9e0]">
+              Computer Science & Design Student | Full-Stack & AI Enthusiast
             </p>
           </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="pt-6 border-t border-border">
-            <p className="text-muted-foreground flex items-center justify-center gap-2">
+            <p className="text-[#bfc9e0] flex items-center justify-center gap-2">
               Made with 
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               by Vishwa S © {new Date().getFullYear()}

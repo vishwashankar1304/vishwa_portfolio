@@ -32,19 +32,15 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-background/80 backdrop-blur-lg shadow-card border-b border-border' 
-        : 'bg-transparent'
-    }`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-hero shadow-card transition-all duration-300">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+            className="text-2xl font-bold hover:scale-105 transition-transform duration-300"
           >
-            Vishwa S
+            <span className="text-primary-glow">Vis</span><span className="text-white">hwa</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -59,14 +55,7 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Button
-              variant="cta"
-              size="sm"
-              onClick={() => scrollToSection('#contact')}
-              className="ml-4"
-            >
-              Hire Me
-            </Button>
+            {/* Hire Me button removed */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,16 +80,7 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <div className="px-4 pt-2">
-                <Button
-                  variant="cta"
-                  size="sm"
-                  onClick={() => scrollToSection('#contact')}
-                  className="w-full"
-                >
-                  Hire Me
-                </Button>
-              </div>
+              {/* Hire Me button removed from mobile */}
             </div>
           </div>
         )}
